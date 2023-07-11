@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url('Images/rock,paper,scissors.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    overflow-x: hidden;
+}
+
+.primary-navigation{
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 5rem;
+    list-style: none;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: inherit;
+    height: 5rem;
+    box-sizing: border-box;
+}
+
+.primary-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 9rem;
+    height: 9rem;
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+.primary-navigation a{
+    text-decoration: none;
+    color: rgb(2, 16, 33);
+    cursor: pointer;
+    color: beige;
+}
+
+
+@media (max-width: 35em){
+    body{
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .primary-navigation{
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 35%;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 4rem;
+        padding: min(20vh, 10rem) 2rem;
+        background: hsl(0 0% 0% / 0.2);
+        height: 100%;
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+
+        overflow-y: scroll;
+    }
+
+    .primary-navigation[data-visible = true]{
+        transform: translateX(0%);
+    }
+
+    @supports (backdrop-filter: blur(1rem)){
+        .primary-navigation{
+            background: hsl(0 0% 100% / 0.2);
+            backdrop-filter: blur(0.3rem);
+        }
+    }
+
+    .mobile-nav-toggle{
+        position: absolute;
+        z-index: 9999;
+        background-color: transparent;
+        background-image: url("Images/icons8-hamburger-50.png");
+        background-repeat: no-repeat;
+        width: 3.5rem;
+        border: 0;
+        aspect-ratio: 1/1;
+        top: 2rem;
+        right: 2rem;
+        display: block;
+    }
+    
+    .headingnotes h2{
+        text-align: center;
+    }
+
+    /* .mobile-nav-toggle[aria-expanded = "true"] {
+        background-image: url("Images/hamburgerclose.png"); 
+    } */
+}
+
+.settings-options{
+    margin-top: 1rem;
+    list-style: none;
+    background-color: white;
+    padding: .7rem;
+    border-radius: 1rem;
+    transition: opacity 0.5s ease-out;
+    opacity: 0; 
+}
+
+.settings-options[data-visible = true]{
+    display: block;
+    opacity: 1;
+}
+
+.playbtn{
+    background-image: linear-gradient(45deg, rgb(166, 0, 255), rgb(0, 255, 13));
+    border-radius: 2rem;
+    width: 7rem;
+    text-align: center;
+    padding: .3rem;
+    color: beige;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* 
+.playbtn{
+    display: flex;
+    padding: 50px;
+    border-radius: 20px;
+    width: 70px;
+    background-color: aquamarine;
+    color: white;
+    text-align: center;
+    font-size: 45px;
+    justify-self: center;
+} */
+/* 
+a:visited{
+    color: rgb(79, 45, 52);
+} */
