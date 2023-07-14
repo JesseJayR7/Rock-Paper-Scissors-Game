@@ -49,12 +49,210 @@ body{
     color: beige;
 }
 
+.settings-options{
+    margin-top: 1rem;
+    list-style: none;
+    background-color: white;
+    padding: .7rem;
+    border-radius: 1rem;
+    display: none;
+}
+
+.settings-options[data-visible = true]{
+    display: block;
+}
+
+.playbtn{
+    background-image: linear-gradient(45deg, rgb(166, 0, 255), rgb(0, 255, 13));
+    border-radius: 2rem;
+    width: 7rem;
+    text-align: center;
+    padding: .3rem;
+    color: beige;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.playbtn:hover{
+    background-image: linear-gradient(45deg, rgb(97, 5, 146), rgb(4, 150, 11));
+}
+
+.play-options{
+    position: absolute;
+    z-index: 999;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    left: 0;
+    right: 0;
+    color: beige;
+    top: 100%;
+    transition: 0.4s ease;
+    visibility: hidden;
+}
+
+.play-options[data-visible = true]{
+    top: 30%;
+    visibility: visible;
+}
+
+.tournamentbtn{
+    background-image: linear-gradient(45deg, rgb(26, 5, 56), rgb(7, 123, 16) 150%);
+    padding: 2rem;
+    border-radius: .7rem;
+    font-size: 2.5rem;
+    transition: transform 1s;
+}
+
+.classicbtn{
+    background-image: linear-gradient(45deg, rgb(26, 5, 56), rgb(115, 10, 10) 150%);
+    padding: 2rem;
+    border-radius: .7rem;
+    font-size: 2.5rem;
+    transition: transform 1s;
+}
+
+.playersbtn{
+    background-image: linear-gradient(45deg, rgb(212, 182, 14), green 150%);
+    padding: 2rem;
+    border-radius: .7rem;
+    font-size: 2.5rem;
+    transition: transform 1s;
+}
+
+.tournamentbtn:hover{
+    background-image: linear-gradient(45deg, rgb(22, 5, 48), rgb(4, 56, 8) 150%);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.classicbtn:hover{
+    background-image: linear-gradient(45deg, rgb(20, 4, 43), rgb(80, 7, 7) 150%);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.playersbtn:hover{
+    background-image: linear-gradient(45deg, rgb(128, 110, 9), rgb(2, 54, 2) 150%);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.tournament-options{
+    list-style: none;
+    margin-top: 1rem;
+    background: hsl(0 0% 100% / 0.2);
+    backdrop-filter: blur(0.3rem);
+    border-radius: 1rem;
+    color: black;
+    padding: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.tournament-options > li{
+    background-color: white;
+    border-radius: 1rem;
+    color: black;
+    padding: .3rem;
+    text-align: center;
+    transition: transform .3s;
+}
+
+.tournament-options > li:hover{
+    transform: scale(1.06);
+}
+
+.tournament-options *+* {
+    margin-top: 1rem;
+}
+
+.tournament-options[data-visible = true]{
+    display: block;
+}
+
+
+.classic-options{
+    list-style: none;
+    margin-top: 1rem;
+    background: hsl(0 0% 100% / 0.2);
+    backdrop-filter: blur(0.3rem);
+    border-radius: 1rem;
+    color: black;
+    padding: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.classic-options > li{
+    background-color: white;
+    border-radius: 1rem;
+    color: black;
+    padding: .3rem;
+    text-align: center;
+    transition: transform .3s;
+}
+
+.classic-options > li:hover{
+    transform: scale(1.06);
+}
+
+.classic-options *+* {
+    margin-top: 1rem;
+}
+
+.classic-options[data-visible = true]{
+    display: block;
+}
+
+.players-options{
+    list-style: none;
+    margin-top: 1rem;
+    background: hsl(0 0% 100% / 0.2);
+    backdrop-filter: blur(0.3rem);
+    border-radius: 1rem;
+    color: black;
+    padding: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.players-options > li{
+    background-color: white;
+    border-radius: 1rem;
+    color: black;
+    padding: .3rem;
+    text-align: center;
+    transition: transform .3s;
+}
+
+.players-options > li:hover{
+    transform: scale(1.06);
+}
+
+.players-options *+* {
+    margin-top: 1rem;
+}
+
+.players-options[data-visible = true]{
+    display: block;
+}
+
+
 
 @media (max-width: 35em){
     body{
-        background-position: center center;
-        background-size: cover;
+        background-image: url('Images/rock,paper,scissors.jpg');
+        background-repeat: no-repeat;
         background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        overflow-x: hidden;
     }
 
     .primary-navigation{
@@ -99,55 +297,55 @@ body{
         right: 2rem;
         display: block;
     }
-    
+
     .headingnotes h2{
         text-align: center;
+    }
+
+    
+    .play-options{
+        display: grid;
+        grid-auto-flow: row;
+        row-gap: 2rem;
+        position: absolute;
+        z-index: 999;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        justify-content: center;
+        color: beige;
+        top: 100%;
+        transition: 0.4s ease;
+        visibility: hidden;
+    }
+
+    .play-options[data-visible = true]{
+        top: 30%;
+        visibility: visible;
+    }
+
+
+    .tournamentbtn{
+        background-image: linear-gradient(45deg, rgb(26, 5, 56), rgb(7, 123, 16) 150%);
+        padding: 2rem;
+        border-radius: .7rem;
+        font-size: 1.5rem;
+    }
+    
+    .classicbtn{
+        background-image: linear-gradient(45deg, rgb(26, 5, 56), rgb(115, 10, 10) 150%);
+        padding: 2rem;
+        border-radius: .7rem;
+        font-size: 1.5rem;
+    }
+    
+    .playersbtn{
+        background-image: linear-gradient(45deg, rgb(212, 182, 14), green 150%);
+        padding: 2rem;
+        border-radius: .7rem;
+        font-size: 1.5rem;
     }
 
     /* .mobile-nav-toggle[aria-expanded = "true"] {
         background-image: url("Images/hamburgerclose.png"); 
     } */
 }
-
-.settings-options{
-    margin-top: 1rem;
-    list-style: none;
-    background-color: white;
-    padding: .7rem;
-    border-radius: 1rem;
-    transition: opacity 0.5s ease-out;
-    opacity: 0; 
-}
-
-.settings-options[data-visible = true]{
-    display: block;
-    opacity: 1;
-}
-
-.playbtn{
-    background-image: linear-gradient(45deg, rgb(166, 0, 255), rgb(0, 255, 13));
-    border-radius: 2rem;
-    width: 7rem;
-    text-align: center;
-    padding: .3rem;
-    color: beige;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-/* 
-.playbtn{
-    display: flex;
-    padding: 50px;
-    border-radius: 20px;
-    width: 70px;
-    background-color: aquamarine;
-    color: white;
-    text-align: center;
-    font-size: 45px;
-    justify-self: center;
-} */
-/* 
-a:visited{
-    color: rgb(79, 45, 52);
-} */

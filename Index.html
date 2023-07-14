@@ -14,7 +14,7 @@
             <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
         <nav>
             <ul class="primary-navigation" data-visible = "false">
-                <li><div class="playbtn"><a>Play!!! <i class="fa-solid fa-hand-fist fa-spin"></i></a></div></li>
+                <li><div class="playbtn" id="playbtn"><a>Play!!! <i class="fa-solid fa-hand-fist fa-spin"></i></a></div></li>
                 <li><a>Appearance</a></li>
                 <li><a href="#">Characters <i class="fa-solid fa-user-secret fa-beat-fade"></i></a></li>
                 <li>
@@ -25,16 +25,37 @@
                         <li></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#" class="settingsbtn">Help <i class="fa-solid fa-book"></i></a>
+                </li>
             </ul>
         </nav>
     </header>
 
 
     <main>
-        <div>
-            <div>TOURNAMENT</div>
-            <div>CLASSIC</div>
-            <div>PLAYERS</div>
+        <div class="play-options" data-visible="false">
+            <div class="tournamentenvironment"><div class="tournamentbtn">TOURNAMENT</div>
+                <ul class="tournament-options" data-visible="false">
+                    <li>4 TEAMS</li>
+                    <li>8 TEAMS</li>
+                    <li>16 TEAMS</li>
+                </ul>
+            </div>
+            <div class="classic environment"><div class="classicbtn">CLASSIC</div>
+                <ul class="classic-options" data-visible="false">
+                    <li>BEST OUT OF 3</li>
+                    <li>BEST OUT OF 5</li>
+                    <li>BEST OUT OF 9</li>
+                </ul>
+            </div>
+            <div><div class="playersbtn">PLAYERS <p class="players-selection"></p></div>
+                <ul class="players-options" data-visible="false">
+                    <li class="players-2-btn">2 PLAYERS</li>
+                    <li class="players-3-btn">3 PLAYERS</li>
+                    <li class="players-4-btn">4 PLAYERS</li>
+                </ul>
+            </div>
         </div>
     </main>
 </body>
